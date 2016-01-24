@@ -1,6 +1,6 @@
 # tap-color
 
-Foobar
+Colorize The Test Anything Protocol Output
 
 ## Install
 
