@@ -37,9 +37,13 @@ function color (line) {
 export default function colorStream () {
   const lines = new LineStream()
   const output = through()
+  let dup = duplexer(lines, output)
 
   lines.on('data', (line) => {
+    if (line.toString().match(/^not ok \d*/)) {
+      dup.failed = true
+    }
     output.push(color(line.toString() + '\n'))
   })
-  return duplexer(lines, output)
+  return dup
 }
