@@ -1,6 +1,6 @@
 {
   "name": "tap-color",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Colorize The Test Anything Protocol Output",
   "license": "MIT",
   "main": "lib/tap-color",
@@ -35,7 +35,8 @@
     "standard": "^5.4.1"
   },
   "files": [
-    "lib"
+    "lib",
+    "cli"
   ],
   "babel": {
     "presets": [
