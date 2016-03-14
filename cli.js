@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var reporter = require('../lib/tap-color.js').default()
+var reporter = require('./lib/tap-color.js').default()
 
 process.stdin
   .pipe(reporter)
