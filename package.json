@@ -1,6 +1,6 @@
 {
   "name": "tap-color",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Colorize The Test Anything Protocol Output",
   "license": "MIT",
   "main": "lib/tap-color",
@@ -18,9 +18,9 @@
     "email": "sigurd@fosseng.net",
     "url": "http://laat.io"
   },
-  "repository":{
-    "type" : "git",
-    "url" : "https://github.com/laat/tap-color.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laat/tap-color.git"
   },
   "dependencies": {
     "byline": "^4.2.1",
