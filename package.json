@@ -40,10 +40,5 @@
   "files": [
     "lib",
     "cli.js"
-  ],
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  }
+  ]
 }
