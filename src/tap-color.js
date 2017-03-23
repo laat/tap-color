@@ -5,12 +5,12 @@ import { LineStream } from 'byline';
 
 function color(theLine) {
   return theLine
-    .replace(/^ok \d*/, (l) => chalk.green.bold(l))
-    .replace(/^not ok \d*/, (l) => chalk.red.bold(l))
-    .replace(/^Bail out!/, (l) => chalk.red.bold(l))
-    .replace(/^(TAP version 13|1..\d+)/, (l) => chalk.gray(l))
-    .replace(/^\s+---/, (l) => chalk.gray(l))
-    .replace(/^\s+\.\.\./, (l) => chalk.gray(l))
+    .replace(/^ok \d*/, l => chalk.green.bold(l))
+    .replace(/^not ok \d*/, l => chalk.red.bold(l))
+    .replace(/^Bail out!/, l => chalk.red.bold(l))
+    .replace(/^(TAP version 13|1..\d+)/, l => chalk.gray(l))
+    .replace(/^\s+---/, l => chalk.gray(l))
+    .replace(/^\s+\.\.\./, l => chalk.gray(l))
     .replace(/(#\s*)(TODO|XXX|skipped|skip|pass|fail)?(.*)/i, (line, hash, mod, rest) => {
       const out = [];
       if (hash) {
