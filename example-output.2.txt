@@ -1,0 +1,27 @@
+1..6
+Already up-to-date.
+ok 1 - download test files
+ok 2 - create test database
+# Subtest: commands require initilization
+    1..3
+    ok 1 - update requires tables to be initialized
+    ok 2 - query requires tables to be initialized
+    not ok 3 - test failure
+    #   Failed test 'test failure'
+    #   at ./test.pl line 31.
+    ok 4 - compare requires tables to be initialized
+    # Looks like you planned 3 tests but ran 4.
+    # Looks like you failed 1 test of 4 run.
+#   Failed test 'commands require initilization'
+#   at ./test.pl line 39.
+not ok 3 - commands require initilization
+ok 4 - init command
+# Subtest: required params
+    1..4
+    ok 1 - update requires directory param
+    ok 2 - query requires an image param
+    ok 3 - compare needs image params
+    ok 4 - compare needs two image params, not just one
+ok 5 - required params
+ok 6 - delete test database
+# Looks like you failed 1 test of 6.
