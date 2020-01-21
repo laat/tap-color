@@ -3,11 +3,14 @@ import duplexer from 'duplexer2';
 import through from 'through2';
 import { LineStream } from 'byline';
 
+const notOk = /^\s*not ok \d*/;
+const bailOut = /^Bail out!/;
+
 function color(theLine) {
   return theLine
     .replace(/^\s*ok \d*/, (l) => chalk.green.bold(l))
-    .replace(/^\s*not ok \d*/, (l) => chalk.red.bold(l))
-    .replace(/^Bail out!/, (l) => chalk.red.bold(l))
+    .replace(notOk, (l) => chalk.red.bold(l))
+    .replace(bailOut, (l) => chalk.red.bold(l))
     .replace(/^\s*(TAP version 13|1..\d+)/, (l) => chalk.gray(l))
     .replace(/^\s+---/, (l) => chalk.gray(l))
     .replace(/^\s+\.\.\./, (l) => chalk.gray(l))
@@ -40,10 +43,11 @@ export default function colorStream() {
   const dup = duplexer(lines, output);
 
   lines.on('data', (line) => {
-    if (line.toString().match(/^not ok \d*/)) {
+    const lineString = line.toString();
+    if (lineString.match(notOk) || lineString.match(bailOut)) {
       dup.failed = true;
     }
-    output.push(color(`${line.toString()}\n`));
+    output.push(color(`${lineString}\n`));
   });
   return dup;
 }

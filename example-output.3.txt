@@ -1,0 +1,6 @@
+TAP version 13
+1..4
+ok 1 - Input file opened
+ok 2 - First line of the input valid
+ok 3 - Read the rest of the file
+Bail out! not cool man
